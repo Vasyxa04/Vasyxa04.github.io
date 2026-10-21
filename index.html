@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Василий Лебедев — CV</title>
+  <meta name="description" content="Резюме Василия Лебедева: computer vision, математическое моделирование, прикладной ИИ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --line: rgba(125, 211, 252, 0.18);
+      --text: #e8eef8;
+      --muted: #9aa8c2;
+      --accent: #7dd3fc;
+      --amber: #f5c16c;
+      --ok: #86efac;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Manrope, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(125, 211, 252, 0.16), transparent 55%),
+        radial-gradient(900px 420px at 100% 0%, rgba(245, 193, 108, 0.10), transparent 50%),
+        var(--bg);
+      line-height: 1.55;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(125, 211, 252, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 211, 252, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.55), transparent 80%);
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 80px; position: relative; }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin: 0 0 10px;
+    }
+    h1 { font-size: clamp(36px, 6vw, 64px); line-height: 0.95; margin: 0 0 12px; letter-spacing: -0.04em; }
+    .lead { color: var(--muted); max-width: 58ch; margin: 0; font-size: 18px; }
+    .scan {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--amber);
+      border: 1px solid rgba(245, 193, 108, 0.35);
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(18, 26, 46, 0.7);
+      min-width: 210px;
+    }
+    .scan b { color: var(--ok); font-weight: 500; }
+    nav.contacts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    nav.contacts a {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(18, 26, 46, 0.55);
+    }
+    nav.contacts a:hover { border-color: var(--accent); color: var(--accent); }
+    section { margin-top: 42px; }
+    h2 {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      margin: 0 0 16px;
+    }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card {
+      background: linear-gradient(180deg, rgba(18,26,46,.92), rgba(18,26,46,.72));
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 18px 8px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .meta { color: var(--amber); font-size: 13px; font-family: "IBM Plex Mono", monospace; margin-bottom: 10px; }
+    ul { margin: 0 0 14px; padding-left: 18px; color: #d5deee; }
+    li { margin: 0 0 7px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font-size: 13px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      background: #18233c;
+      border: 1px solid var(--line);
+    }
+    .pub a, .card a { color: var(--accent); }
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    @media (max-width: 760px) {
+      header, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="kicker">HSE SPb · Applied AI · Computer Vision</p>
+        <h1>Василий<br>Лебедев</h1>
+        <p class="lead">Строю модели компьютерного зрения и математические алгоритмы для инспекционно-досмотровых систем: синтетические данные, YOLO, реконструкция и Z-recovery.</p>
+        <nav class="contacts">
+          <a href="mailto:Vasyxa04@gmail.com">Vasyxa04@gmail.com</a>
+          <a href="https://t.me/vasyxa04">Telegram @vasyxa04</a>
+          <a href="https://github.com/Vasyxa04">GitHub</a>
+        </nav>
+      </div>
+      <div class="scan">
+        object: human<br>
+        loc: Санкт-Петербург<br>
+        status: <b>open to work</b><br>
+        z-map: 4 курс НИУ ВШЭ
+      </div>
+    </header>
+
+    <section>
+      <h2>Опыт</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Лаборатория Scantronic</h3>
+          <p class="meta">CV-исследователь · 1 год</p>
+          <ul>
+            <li>Синтетические данные для обучения нейросетевых моделей.</li>
+            <li>Изменение внутренней архитектуры и обучение YOLO.</li>
+            <li>Организация сбора натурных рентгеновских образов для тестов.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Scantronic System</h3>
+          <p class="meta">математик-программист · 2 года</p>
+          <ul>
+            <li>Алгоритмы для инспекционно-досмотрового оборудования.</li>
+            <li>Модели для некорректных задач математической физики.</li>
+            <li>Технология Z-recovery: оценка атомного номера веществ.</li>
+            <li>Задачи реконструкции для авиационной безопасности.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Образование</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>НИУ ВШЭ — Санкт-Петербург</h3>
+          <p class="meta">4 курс бакалавриата</p>
+          <ul>
+            <li>СПб школа физико-математических и компьютерных наук</li>
+            <li>Прикладной анализ данных и искусственный интеллект</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Президентский ФМЛ № 239</h3>
+          <p class="meta">выпуск 2022</p>
+          <ul>
+            <li>Физико-математический лицей</li>
+            <li>Лицей Академии Яндекса</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Навыки</h2>
+      <article class="card">
+        <p class="meta">stack</p>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">C++</span>
+          <span class="chip">C</span>
+          <span class="chip">SQL</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">JAX</span>
+          <span class="chip">Keras</span>
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">NumPy / Pandas</span>
+          <span class="chip">SciPy</span>
+          <span class="chip">Django</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Git</span>
+          <span class="chip">MATLAB</span>
+          <span class="chip">YOLO</span>
+          <span class="chip">оптимизация</span>
+        </div>
+        <ul>
+          <li>Алгоритмы, теория вероятностей, матстатистика, матанализ, теория оптимизации.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Проекты и публикации</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Генерация облаков точек</h3>
+          <p class="meta">3D · computer vision</p>
+          <ul>
+            <li>Облако из k точек по фотографиям и рендерам с разных ракурсов.</li>
+            <li>Уплотнение до N·k точек и чистка через KD-деревья.</li>
+          </ul>
+          <p><a href="https://github.com/Vasyxa04/Generation-of-3D-Objects">github.com/Vasyxa04/Generation-of-3D-Objects</a></p>
+        </article>
+        <article class="card">
+          <h3>Unreal Fluid</h3>
+          <p class="meta">физика · рендеринг</p>
+          <ul>
+            <li>Моделирование жидкости и газа и их взаимодействия.</li>
+            <li>Рендеринг физических процессов.</li>
+          </ul>
+        </article>
+      </div>
+      <article class="card pub" style="margin-top:16px">
+        <h3>Публикация</h3>
+        <p>Огородников С. А., Виканова А. А., Лебедев В. С. Направления и перспективы развития систем досмотра грузов и транспортных средств // Учёные записки Санкт-Петербургского имени В. Б. Бобкова филиала Российской таможенной академии. 2025. № 4 (96). С. 64–77.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Достижения</h2>
+      <article class="card">
+        <ul>
+          <li>Призёр полуфинала ICPC 2025, четвертьфиналист ICPC 2023.</li>
+          <li>Победитель и призёр перечневых математических олимпиад, в том числе открытой олимпиады ИТМО по математике.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>vasyxa04.github.io · страница собрана по актуальному CV</footer>
+  </div>
+</body>
+</html>
